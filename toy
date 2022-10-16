@@ -1,0 +1,11 @@
+Toy project for a taste of Microservices
+
+Description:
+  An app of 3 features:
+    Posting
+    Commenting on the posts
+    Display the posts and comments
+
+
+How many services am I going to create?
+  Two services since there are 2 resources
