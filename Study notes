@@ -1,0 +1,24 @@
+What is Microservice?
+  The architecture that incorporate a unique set of routing, middlewares, business logic, and database with a single feature of the app.
+  The idea is to make each feature independent from each other so that the breakdown of one feature does not affect the others.
+  
+What is the benefit of using one database per service?
+  Free to systematic risk
+  Easier to scale
+  Flexible database choice for different services
+  
+What is the challenges with microservices?
+  How to get data without accessing other databases?
+    Syncronous data communication: Direct request from A over to B
+      Pros:
+        space
+      Cons:
+        web of dependencies
+        time
+    Async: A spread an event, and the others take what they need.
+      Pros:
+        time
+        dependencies
+       Cons:
+        space
+
