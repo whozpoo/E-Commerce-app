@@ -8,3 +8,18 @@ How does React start up in users' browser?
   Find root div
   Control it
   Render the highest react component in the root div.
+  
+ 
+How to connect a form to backend?
+
+
+How to render a variable or an expression?
+  {variable} in JSX.
+  React renders string and number only.
+
+How to customize a JSX element?
+  Props
+    Syntax:
+      propA="string" OR {the others like number, object, variable...}
+    What's the differences between React props and HTML attributes?
+      we can provide a variable to a prop.
