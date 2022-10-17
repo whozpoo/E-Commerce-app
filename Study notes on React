@@ -1,1 +1,10 @@
+How does React work to display stuff on a website?
+  Users send a request to the server, server respond with a HTML file which is tied with the bundled JS file that contains the React app.
 
+What is a React component?
+  Functions that return JSX, which is made up of HTML and other React components.
+
+How does React start up in users' browser?
+  Find root div
+  Control it
+  Render the highest react component in the root div.
