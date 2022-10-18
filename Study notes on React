@@ -3,6 +3,10 @@ How does React work to display stuff on a website?
 
 What is a React component?
   Functions that return JSX, which is made up of HTML and other React components.
+  Component nesting:
+  How to make reusable component?
+  
+  How to customize a component?
 
 How does React start up in users' browser?
   Find root div
@@ -21,5 +25,13 @@ How to customize a JSX element?
   Props
     Syntax:
       propA="string" OR {the others like number, object, variable...}
-    What's the differences between React props and HTML attributes?
+    What's the differences between JSX props and HTML attributes?
       we can provide a variable to a prop.
+    Other things to note on converting HTML to JSX?
+      Camelcase: maxlength -> maxLength
+      class -> className
+        For class is assigned in JS
+      In-line styles are provided as objects instead of strings
+        
+
+      
