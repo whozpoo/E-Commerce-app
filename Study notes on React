@@ -2,11 +2,13 @@ How does React work to display stuff on a website?
   Users send a request to the server, server respond with a HTML file which is tied with the bundled JS file that contains the React app.
 
 What is a React component?
-  Functions that return JSX, which is made up of HTML and other React components.
-  Component nesting:
-  How to make reusable component?
-  
-  How to customize a component?
+  A functions or class that produces JSX, which is made up of HTML and other React components, to display and handles feedback from users.
+  How to make a good component?
+    Nesting and customize resuable components.
+    2 ways to send information to a component:
+      send in some simple pieces
+      send in a JSX block: props.children
+
 
 How does React start up in users' browser?
   Find root div
@@ -26,12 +28,13 @@ How to customize a JSX element?
     Syntax:
       propA="string" OR {the others like number, object, variable...}
     What's the differences between JSX props and HTML attributes?
-      we can provide a variable to a prop.
+      we can provide a variable to a prop to make components configurable.
     Other things to note on converting HTML to JSX?
       Camelcase: maxlength -> maxLength
       class -> className
         For class is assigned in JS
       In-line styles are provided as objects instead of strings
-        
 
+ How to handle async operations?
+    
       
