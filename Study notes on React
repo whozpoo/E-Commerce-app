@@ -36,5 +36,12 @@ How to customize a JSX element?
       In-line styles are provided as objects instead of strings
 
  How to handle async operations?
+    Using state
+      What is state?
+        An object that being updated with setState() cause the component to rerender instantly.
+ 
+ What are component lifecycle methods?
+    Methods that get triggered at certain point of time.
+    Its use?
+      manage complexity
     
-      
