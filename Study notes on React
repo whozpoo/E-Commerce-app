@@ -8,6 +8,7 @@ What is a React component?
     2 ways to send information to a component:
       send in some simple pieces
       send in a JSX block: props.children
+    How to set up a default prop?
 
 
 How does React start up in users' browser?
@@ -44,4 +45,6 @@ How to customize a JSX element?
     Methods that get triggered at certain point of time.
     Its use?
       manage complexity
+ 
+ How to handle user input?
     
