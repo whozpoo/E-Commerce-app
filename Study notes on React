@@ -41,10 +41,20 @@ How to customize a JSX element?
       What is state?
         An object that being updated with setState() cause the component to rerender instantly.
  
- What are component lifecycle methods?
+ How to handle user input?
+    How to trigger some function when we input new information into some area on the website?
+      Wire up an event handler with a JSX element by props like conChange, onClick, onSubmit.
+    How does the event object work?
+ 
+ 
+ ---
+ Design issues:
+  What are component lifecycle methods?
     Methods that get triggered at certain point of time.
     Its use?
       manage complexity
- 
- How to handle user input?
-    
+  Why do we prefer controlled component to uncontrolled component?
+    What is 'controlled':
+      form data is handled by component's state.
+    To store the informationn in a component rather than in DOM.
+      so that we can manipulate user inputs with more flexibility.
