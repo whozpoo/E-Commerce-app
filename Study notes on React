@@ -5,9 +5,11 @@ What is a React component?
   A functions or class that produces JSX, which is made up of HTML and other React components, to display and handles feedback from users.
   How to make a good component?
     Nesting and customize resuable components.
-    2 ways to send information to a component:
+    How to send information to a component:
       send in some simple pieces
       send in a JSX block: props.children
+    How to communicate from child to parent?
+      send in a method.
     How to set up a default prop?
 
 
@@ -46,6 +48,9 @@ How to customize a JSX element?
       Wire up an event handler with a JSX element by props like conChange, onClick, onSubmit.
     How does the event object work?
  
+ 
+ How to make requests to an API?
+    
  
  ---
  Design issues:
