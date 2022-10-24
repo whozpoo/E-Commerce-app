@@ -54,7 +54,7 @@ How to customize a JSX element?
     fetch
 
 How to get access to a DOM element?
-    Refs
+    Wire up a Ref object.
 
  
  -------
