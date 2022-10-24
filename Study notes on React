@@ -18,8 +18,6 @@ How does React start up in users' browser?
   Control it
   Render the highest react component in the root div.
   
- 
-How to connect a form to backend?
 
 
 How to render a variable or an expression?
