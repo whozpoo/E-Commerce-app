@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const { randomBytes } = require("crypto");
 const cors = require("cors");
 const axios = require("axios");
+const { type } = require("os");
 
 const app = express();
 app.use(bodyParser.json());
@@ -32,6 +33,8 @@ app.post("/posts", (req, res) => {
 
 app.post("/events", (req, res) => {
   console.log("Received Event:", req.body.type);
+
+  const { type, data } = req.body;
 
   res.send({});
 });

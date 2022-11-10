@@ -5,14 +5,31 @@ const axios = require("axios");
 const app = express();
 app.use(bodyParser.json());
 
+const events = [];
+
 app.post("/events", (req, res) => {
   const event = req.body;
 
-  axios.post("http://localhost:4011/events", event);
-  axios.post("http://localhost:4012/events", event);
-  axios.post("http://localhost:4013/events", event);
+  events.push(event);
+
+  axios.post("http://localhost:4011/events", event).catch((err) => {
+    console.log(err.message);
+  });
+  axios.post("http://localhost:4012/events", event).catch((err) => {
+    console.log(err.message);
+  });
+  axios.post("http://localhost:4013/events", event).catch((err) => {
+    console.log(err.message);
+  });
+  axios.post("http://localhost:4014/events", event).catch((err) => {
+    console.log(err.message);
+  });
 
   res.send({ status: "OK" });
+});
+
+app.get("/events", (req, res) => {
+  res.send(events);
 });
 
 app.listen(4005, () => {
