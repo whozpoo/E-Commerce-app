@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY ./package.json ./
 
-RUN npm config set registry http://r.cnpmjs.org
+RUN npm config set registry https://registry.npmmirror.com
 
 RUN npm install
 

@@ -15,17 +15,16 @@ app.post('/events', (req, res) => {
   axios.post('http://posts-clusterip-srv:4011/events', event).catch((err) => {
     console.log(err.message);
   });
-  /*
-  axios.post("http://localhost:4012/events", event).catch((err) => {
+
+  axios.post('http://comments-srv:4012/events', event).catch((err) => {
     console.log(err.message);
   });
-  axios.post("http://localhost:4013/events", event).catch((err) => {
+  axios.post('http://query-srv:4013/events', event).catch((err) => {
     console.log(err.message);
   });
-  axios.post("http://localhost:4014/events", event).catch((err) => {
+  axios.post('http://moderation-srv:4014/events', event).catch((err) => {
     console.log(err.message);
   });
-  */
 
   res.send({ status: 'OK' });
 });
