@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState } from 'react';
+import axios from 'axios';
 
 const CommentCreate = ({ postID }) => {
-  const [content, setContent] = useState("");
+  const [content, setContent] = useState('');
 
   const onSubmit = async (event) => {
     event.preventDefault();
 
-    await axios.post(`http://localhost:4012/posts/${postID}/comments`, {
+    await axios.post(`http://posts.com/posts/${postID}/comments`, {
       content,
     });
 
-    setContent("");
+    setContent('');
   };
 
   return (
