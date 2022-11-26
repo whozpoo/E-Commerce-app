@@ -12,19 +12,19 @@ spec:
       labels:
         app: auth
     spec:
-      container:
+      containers:
         - name: auth
           image: poo2338/auth
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: auth-svc
+  name: auth-srv
 spec:
   selector:
     app: auth
   ports:
     - name: auth
-      protocal: TCP
+      protocol: TCP
       port: 3000
       targetPort: 3000
