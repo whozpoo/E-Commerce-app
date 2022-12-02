@@ -37,7 +37,7 @@ afterAll(async () => {
 global.signin = () => {
   // fake a cookie
   const payload = {
-    id: 'asdfasdf',
+    id: new mongoose.Types.ObjectId().toHexString(),
     email: 'asdf@asdf.com',
   };
   const token = jwt.sign(payload, process.env.JWT_KEY!);
