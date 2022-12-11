@@ -1,5 +1,6 @@
 import nats, { Message, Stan } from 'node-nats-streaming';
 import { randomBytes } from 'crypto';
+import { ItemCreatedListener } from './item-created-listener';
 
 console.clear();
 
@@ -15,21 +16,7 @@ client.on('connect', () => {
     process.exit();
   });
 
-  const options = client
-    .subscriptionOptions()
-    .setManualAckMode(true)
-    .setDeliverAllAvailable()
-    .setDurableName('item-service');
-  const subscription = client.subscribe(
-    'item:created',
-    'orders-service-queue-group',
-    options
-  );
-
-  subscription.on('message', (msg: Message) => {
-    console.log(`message #${msg.getSequence()} received`);
-    msg.ack();
-  });
+  new ItemCreatedListener(client).listen();
 });
 
 process.on('SIGINT', () => client.close());

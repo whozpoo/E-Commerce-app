@@ -1,4 +1,5 @@
 import nats from 'node-nats-streaming';
+import { ItemCreatedPublisher } from '../../commonlib/src/events/item-created-publisher';
 
 console.clear();
 
@@ -6,16 +7,19 @@ const client = nats.connect('ecommerce', 'abc', {
   url: 'http://localhost:4222',
 });
 
-client.on('connect', () => {
+client.on('connect', async () => {
   console.log('Publisher connected');
 
-  const data = JSON.stringify({
+  const data = {
     id: '123',
     title: 'banana',
-    price: '5',
-  });
+    price: 5,
+  };
 
-  client.publish('item:created', data, () => {
-    console.log('event published');
-  });
+  const publisher = new ItemCreatedPublisher(client);
+  try {
+    await publisher.publish(data);
+  } catch (err) {
+    console.error(err);
+  }
 });
