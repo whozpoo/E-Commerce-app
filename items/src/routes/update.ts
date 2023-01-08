@@ -5,6 +5,7 @@ import {
   NotFoundError,
   requireAuth,
   NotAuthorizedError,
+  BadRequestError,
 } from '@itemseller/commonlib';
 import { Item } from '../models/item';
 import { ItemUpdatedPublisher } from '../events/publishers/item-updated-publisher';
@@ -29,6 +30,10 @@ router.put(
       throw new NotFoundError();
     }
 
+    if (item.orderId) {
+      throw new BadRequestError('Cannot edit a reserved item');
+    }
+
     if (item.userId !== req.currentUser!.id) {
       throw new NotAuthorizedError();
     }
@@ -44,6 +49,7 @@ router.put(
       title: item.title,
       price: item.price,
       userId: item.userId,
+      version: item.version,
     });
 
     res.send(item);
