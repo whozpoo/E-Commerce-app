@@ -6,10 +6,13 @@ import jwt from 'jsonwebtoken';
 import { app } from '../app';
 
 declare global {
-  var signin: () => string[];
+  var signin: (id?: string) => string[];
 }
 
 jest.mock('../nats-wrapper');
+
+process.env.STRIPE_KEY =
+  'sk_test_51MOEw8DyOYlviJUvThX46G8qQXHWiBXntAyLhcAZJLbJh58YA2CrXRxEpLDaLTkLUWEy0H1DMbBythGvVm7ikSzV00DbWO8FtZ';
 
 let mongo: any;
 beforeAll(async () => {
@@ -37,10 +40,10 @@ afterAll(async () => {
   await mongoose.connection.close();
 });
 
-global.signin = () => {
+global.signin = (id?: string) => {
   // fake a cookie
   const payload = {
-    id: new mongoose.Types.ObjectId().toHexString(),
+    id: id || new mongoose.Types.ObjectId().toHexString(),
     email: 'asdf@asdf.com',
   };
   const token = jwt.sign(payload, process.env.JWT_KEY!);
