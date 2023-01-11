@@ -26,3 +26,6 @@ spec:
               value: 'ecommerce'
             - name: REDIS_HOST
               value: 'expiration-redis-srv'
+
+
+//asdf
