@@ -14,6 +14,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: digitalocean/action-doctl@v2
         with:
-          token: dop_v1_f7f3efc93b12d6d0417597328b2347663a117cf6a60abe268efa5c94f553de21
+          token: $${{ DIGITALOCEAN_ACCESS_TOKEN }}
       - run: doctl kubernetes cluster kubeconfig save emart
       - run: kubectl apply -f infra/k8s && kubectl apply -f infra/k8s-prod
