@@ -2,10 +2,9 @@ name: tests-items
 
 
 on:
-  pull_request
+  pull_request:
     paths:
       - 'items/**'
-
 
 jobs:
   build:
