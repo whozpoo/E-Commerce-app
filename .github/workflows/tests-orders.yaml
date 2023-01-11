@@ -1,7 +1,14 @@
 name: tests-orders
 
+<<<<<<< HEAD
 on: pull_request
 
+=======
+on:
+  pull_request
+    paths:
+      - 'orders/**'
+>>>>>>> main
 jobs:
   build:
     runs-on: ubuntu-latest

@@ -1,6 +1,13 @@
 name: tests-items
 
+<<<<<<< HEAD
 on: pull_request
+=======
+on:
+  pull_request
+    paths:
+      - 'items/**'
+>>>>>>> main
 
 jobs:
   build:
