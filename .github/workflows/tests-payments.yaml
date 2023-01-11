@@ -1,6 +1,5 @@
 name: tests-payments
 
-
 on:
   pull_request:
     paths:
